@@ -1,0 +1,28 @@
+package com.basics.entity;
+
+import jakarta.persistence.*;
+import lombok.*;
+
+@Entity
+@Table(name = "books")
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class Book {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Column(nullable = false)
+    private String title;
+
+    @Column(nullable = false)
+    private String author;
+
+    @Column(nullable = false)
+    private Integer publicationYear;
+
+    @Column(unique = true)
+    private String isbn;
+}
